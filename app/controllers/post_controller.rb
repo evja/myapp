@@ -20,6 +20,9 @@ class PostController < ApplicationController
   		render.new
   	end
   end
+  def edit
+    @post = Post.find(params[:id])
+  end
 
   private
 
