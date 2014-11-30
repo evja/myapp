@@ -1,5 +1,4 @@
-class PostController < ApplicationController
-
+class PostsController < ApplicationController
   def index
   	@posts = Post.all
   end
@@ -23,23 +22,23 @@ class PostController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+  	@post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
+  	@post = Post.find(params[:id])
 
-    if @post.update_attributes(post_params)
-      redirect_to posts_path
-    else
-      render :edit
-    end
+  	if @post.update_attributes(post_params)
+  		redirect_to posts_path
+  	else
+  		render :edit
+  	end
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to posts_path
+  	@post = Post.find(post_params[:id])
+  	@post.destroy
+  	redirect_to posts_path
   end
 
   private
