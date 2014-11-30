@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'static/home'
+
+  get 'static/about'
+
   resources :posts
 
   # get 'post/index'
